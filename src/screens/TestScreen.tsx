@@ -3,29 +3,28 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useLike } from '../store/useLikeStore';
 
-
 export const TestScreenInner: React.FC = () => {
-    const like = useLike((state) => state.like);
-    const like2 = useLike((state) => state.like);
-    const increaseLike = useLike((state) => state.increaseLike);
-    const removeAllLikes = useLike((state) => state.removeAllLikes);
+  const like = useLike((state) => state.like);
+  const like2 = useLike((state) => state.like);
+  const increaseLike = useLike((state) => state.increaseLike);
+  const removeAllLikes = useLike((state) => state.removeAllLikes);
 
-    return (
-        <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
-            <View style={styles.content}>
-                <Text style={styles.text}>Test Screen</Text>
-                <Text style={styles.text}>
-                    Likes: {like} / {like2}
-                </Text>
-                <View>
-                    <Button title="Increase" onPress={increaseLike} />
-                </View>
-                <View>
-                    <Button title="Reset" onPress={removeAllLikes} />
-                </View>
-            </View>
-        </SafeAreaView>
-    );
+  return (
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+      <View style={styles.content}>
+        <Text style={styles.text}>Test Screen</Text>
+        <Text style={styles.text}>
+          Likes: {like} / {like2}
+        </Text>
+        <View>
+          <Button title="Increase" onPress={increaseLike} />
+        </View>
+        <View>
+          <Button title="Reset" onPress={removeAllLikes} />
+        </View>
+      </View>
+    </SafeAreaView>
+  );
 };
 
 export const TestScreen: React.FC = () => {
@@ -48,7 +47,7 @@ export const TestScreen: React.FC = () => {
           <Button title="Reset" onPress={removeAllLikes} />
         </View>
       </View>
-        <TestScreenInner />
+      <TestScreenInner />
     </SafeAreaView>
   );
 };
