@@ -8,8 +8,9 @@ import { MainTabParamList, RootStackParamList } from '../types';
 import { HomeScreen } from '../screens/HomeScreen';
 import { FavoritesScreen } from '../screens/FavoritesScreen';
 import { HelpScreen } from '../screens/HelpScreen';
-import { ContactScreen } from '../screens/ContactScreen';
+import { ContactNavigator } from './ContactNavigator';
 import { TestScreen } from '../screens/TestScreen';
+import { TransQueryScreen } from '../screens/TransQueryScreen';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 
@@ -36,6 +37,8 @@ export const TabNavigator = () => {
             iconName = 'contact-mail';
           } else if (route.name === 'Test') {
             iconName = 'settings';
+          } else if (route.name === 'TransQuery') {
+            iconName = 'code';
           } else if (route.name === 'Logout') {
             iconName = 'logout';
           }
@@ -52,8 +55,9 @@ export const TabNavigator = () => {
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Favorites" component={FavoritesScreen} />
       <Tab.Screen name="Help" component={HelpScreen} />
-      <Tab.Screen name="Contact" component={ContactScreen} />
+      <Tab.Screen name="Contact" component={ContactNavigator} />
       <Tab.Screen name="Test" component={TestScreen} />
+      <Tab.Screen name="TransQuery" component={TransQueryScreen} />
       <Tab.Screen
         name="Logout"
         component={LogoutComponent}
